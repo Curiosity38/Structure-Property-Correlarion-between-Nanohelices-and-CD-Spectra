@@ -1,0 +1,112 @@
+****************************************************************
+  Sure Independence Screening and Sparsifying Operator (SISSO)  
+             Version SISSO.3.3, July, 2023.                
+****************************************************************
+
+Read in data from train.dat
+Read in data from SISSO.in
+Property type:     1
+Number of tasks:        1
+Descriptor dimension:        3
+Number of samples for the task(s):    726
+Restarts :  0
+Number of scalar features:        3
+Tier of the feature space:        3
+Maximal feature complexity (number of operators in a feature):        7
+Unit of input primary feature, each represented by a row vector: 
+    0.00
+    0.00
+    0.00
+The feature will be discarded if the minimum of the maximal abs. value in it <    0.10000E-02
+The faature will be discarded if the maximum of the maximal abs. value in it >     0.10000E+06
+Size of the SIS-selected (single) subspace :     40    40    40
+Operators for feature construction: (+)(-)(*)(/)(exp)(exp-)(^-1)(^2)(^3)(sqrt)(cbrt)(log)(|-|)(scd)(^6)(sin)(cos) (+)(-)(*)(/)(exp)(exp-)(^-1)(^2)(^3)(sqrt)(cbrt)(log)(|-|)(scd)(^6)(sin)(cos) (+)(-)(*)(/)(exp)(exp-)(^-1)(^2)(^3)(sqrt)(cbrt)(log)(|-|)(scd)(^6)(sin)(cos) 
+Method for sparse regression:  L0        
+Fitting intercept:      T
+Metric for model selection: RMSE
+Number of the top-ranked models to output:      100
+--------------------------------------------------------------------------------
+
+Dimension:   1
+-------------------
+Feature Construction (FC) starts ...
+Population Standard Deviation (SD) of the task 001:    0.48704
+Total number of features in the space phi00:              3
+Total number of features in the space phi01:             54
+Total number of features in the space phi02:           6567
+Total number of features in the space phi03:      124429941
+Size of the SIS-selected subspace from phi03:         40
+Time (second) used for this FC:            7.77
+
+Descriptor Identification (DI) starts ...
+Total number of SIS-selected features from all dimensions:         40
+ 
+  1D descriptor: 
+     d001 = ((sqrt(curl)-(pitch/diameter))+abs(cbrt(diameter)-(pitch/diameter)))    feature_ID:000001
+
+  1D model(y=sum(ci*di)+c0): 
+     coeff.(ci)_task001:    -0.2676999971E+00
+             c0_task001:     0.9934502304E+00
+     RMSE,MaxAE_task001:     0.1974717680E+00    0.5488584445E+00
+
+     RMSE and MaxAE of the model:   0.197472  0.548858
+--------------------------------------------------------------------------------
+Time (second) used for this DI:            0.01
+
+Dimension:   2
+-------------------
+Feature Construction (FC) starts ...
+Total number of features in the space phi00:              3
+Total number of features in the space phi01:             54
+Total number of features in the space phi02:           6567
+Total number of features in the space phi03:      124429941
+Size of the SIS-selected subspace from phi03:         40
+Time (second) used for this FC:            7.75
+
+Descriptor Identification (DI) starts ...
+Total number of SIS-selected features from all dimensions:         80
+ 
+  2D descriptor: 
+     d001 = cbrt(((curl+diameter)+(diameter-pitch)))    feature_ID:000003
+     d002 = abs((diameter*log(diameter))-((curl*pitch)-(pitch+diameter)))    feature_ID:000070
+
+  2D model(y=sum(ci*di)+c0): 
+     coeff.(ci)_task001:    -0.1580937637E+00   -0.1507116064E-02
+             c0_task001:     0.9182418355E+00
+     RMSE,MaxAE_task001:     0.1473669321E+00    0.7836177960E+00
+
+     RMSE and MaxAE of the model:   0.147367  0.783618
+--------------------------------------------------------------------------------
+Time (second) used for this DI:            0.01
+
+Dimension:   3
+-------------------
+Feature Construction (FC) starts ...
+Total number of features in the space phi00:              3
+Total number of features in the space phi01:             54
+Total number of features in the space phi02:           6567
+Total number of features in the space phi03:      124429941
+Size of the SIS-selected subspace from phi03:         40
+Time (second) used for this FC:            7.75
+
+Descriptor Identification (DI) starts ...
+Total number of SIS-selected features from all dimensions:        120
+ 
+Final model/descriptor !
+================================================================================
+  3D descriptor: 
+     d001 = cbrt(((curl+diameter)+(diameter-pitch)))    feature_ID:000003
+     d002 = abs(((curl*pitch)/cbrt(pitch))-((curl+diameter)+(diameter/curl)))    feature_ID:000060
+     d003 = (((curl)^-1/(curl-pitch))-(scd(diameter)/cos(diameter)))    feature_ID:000087
+
+  3D model(y=sum(ci*di)+c0): 
+     coeff.(ci)_task001:    -0.1618918385E+00   -0.5358729982E-02   -0.3274504759E+02
+             c0_task001:     0.7471046834E+00
+     RMSE,MaxAE_task001:     0.1286010846E+00    0.7450263118E+00
+
+     RMSE and MaxAE of the model:   0.128601  0.745026
+================================================================================
+Time (second) used for this DI:            0.09
+Total time (second):           23.45
+Have a nice day !    
+
